@@ -1,11 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BreweryList } from './BreweryList/BreweryList';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/brewery-list" element={<BreweryList />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
