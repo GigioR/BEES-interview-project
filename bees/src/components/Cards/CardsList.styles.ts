@@ -1,35 +1,39 @@
 import styled from "styled-components";
 
-
 export const CardsContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
     display: grid;
-    grid-template-columns: auto auto;
-    background-color: #E5E5E5;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 23px 23px;
+    margin: 30px 0;
+    justify-items: center;
 `;
 
-export const CardContainer = styled.div`
+export const Container = styled.div`
     width: 382px;
     background-color: #FFFFFF;
-    height: 282px;
-    position: absolute;
+    height: auto;
     border-radius: 5px;
-    margin: 26px 0 0 23px;
+    padding: 0 23px 35px;
     border: 1px solid #000000;
 `;
 
 export const TopContainer = styled.div`
-    margin: 14px 15px 0px 23px;
+    display: flex;
+    justify-content: space-between;
 `;
 
 export const BreweryName = styled.span`
+    margin: 30px 0px 0px 23px;
     color: black;
 `;
 
-export const BinIcon = styled.div`
-    background-image: url("../../public/bin.png");
+export const BinButton = styled.button`
+    margin: 14px 15px 0 0;
+    background: transparent;
+    border: none;
+`;
+
+export const BinIcon = styled.img`
     color: black;
 `;
 
@@ -61,12 +65,22 @@ export const Pills = styled.div`
     display: flex;
     margin: 26px 0 0 23px;
     align-items: center;
+    padding: 8px 12px;
+    gap: 12px;
 `;
 
 export const CompanyIcon = styled.img`
-    margin-right: 12px;
 `;
 
 export const CompanyInfo = styled.span`
     margin-right: 12px;
+`;
+
+export const EditingButton = styled.button`
+    background: transparent;
+    border: none;
+`;
+
+export const InputAddMoreInfo = styled.input`
+    width: 83px;
 `;

@@ -7,7 +7,7 @@ export const LandingContentWrapper = styled.div`
     padding: 0;
     background: #F2EC54;
 `;
-    
+
 export const WelcomeContent = styled.div`
     position: absolute;
     left: 50%;
@@ -20,7 +20,7 @@ export const WelcomeContent = styled.div`
 
 export const FullNameMessage = styled.span`
     padding: 8px 16px;
-`; 
+`;
 
 export const AlphabeticalMessage = styled.span`
     padding: 8px 16px;
@@ -32,12 +32,13 @@ export const InputAndButtonContainer = styled.div`
     align-items: center;
 `;
 
-export const InputNameContainer = styled.input`
+export const InputNameContainer = styled.input<{ invalid: boolean }>`
     width: 300px;
     height: 43px;
     border-radius: 4px;
     padding: 0px 16px;
     margin: 16px;
+    border: ${(invalid) => !invalid ? "1px solid red" : "none"}
 `;
 
 export const InputCheckboxText = styled.label`
@@ -62,6 +63,8 @@ export const BeeIcon = styled.img`
     position: absolute;
     width: 278px;
     height: 278px;
+    bottom: 0;
+    left: 0;
 `;
 
 

@@ -6,7 +6,7 @@ export interface BreweryList {
     country: string | null;
     county_province: string | null;
     created_at: string | null;
-    id: string | null;
+    id: number;
     latitude: string | null;
     longitude: string | null;
     name: string | null;
@@ -16,6 +16,7 @@ export interface BreweryList {
     street: string | null;
     updated_at: string | null;
     website_url: string | null;
+    moreInfo?: string | null;
 }
 
 export interface BreweryInterface {
