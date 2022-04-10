@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import { BreweryList } from "../BreweryList/BreweryList.types";
-import { CompanyIcon, CompanyInfo, Container, TopContainer, BinIcon, BreweryName, AddressContainer, StreetContainer, FullAddress, PillsContainer, Pills, BinButton, EditingButton, InputAddMoreInfo } from "./CardsList.styles";
+import {
+    CompanyIcon,
+    CompanyInfo,
+    Container,
+    TopContainer,
+    BinIcon,
+    BreweryName,
+    AddressContainer,
+    StreetContainer,
+    FullAddress,
+    PillsContainer,
+    Pills,
+    BinButton,
+    EditingButton,
+    InputAddMoreInfo
+} from "./CardsList.styles";
 import TypeImg from '../../assets/images/type.svg';
 import PostalImg from '../../assets/images/postal.svg';
 import PhoneImg from '../../assets/images/phone.svg';
@@ -43,41 +58,41 @@ export const Card = ({ item }: CardInterface) => {
 
     const pills = [
         (
-            item.brewery_type && <Pills key={"type"}>
+            item.brewery_type && <Pills data-testid="pill-type" key={"type"}>
                 <CompanyIcon src={TypeImg} />
                 <CompanyInfo>{item.brewery_type}</CompanyInfo>
             </Pills>
         ),
         (
-            item.postal_code && <Pills key={"postal"}>
+            item.postal_code && <Pills data-testid="pill-postal" key={"postal"}>
                 <CompanyIcon src={PostalImg} />
                 <CompanyInfo>{item.postal_code}</CompanyInfo>
             </Pills>
         ),
         (
-            item.phone && <Pills key={"phone"}>
+            item.phone && <Pills data-testid="pill-phone" key={"phone"}>
                 <CompanyIcon src={PhoneImg} />
                 <CompanyInfo>{item.phone}</CompanyInfo>
             </Pills>
         ),
         (
-            <Pills key={"more"}>
+            <Pills data-testid="pill-more-info" key={"more"}>
                 {getMoreInfoPill()}
             </Pills>
         ),
     ]
 
     return (
-        <Container className="card container">
+        <Container data-testid="card-box">
             <TopContainer>
-                <BreweryName>{item.name}</BreweryName>
-                <BinButton onClick={() => handleDeleteCard(item.id)}><BinIcon src={BinImg} /></BinButton>
+                <BreweryName data-testid="brewery-name">{item.name}</BreweryName>
+                <BinButton data-testid="delete-button" onClick={() => handleDeleteCard(item.id)}><BinIcon src={BinImg} /></BinButton>
             </TopContainer>
-            <AddressContainer>
+            <AddressContainer data-testid="brewery-address">
                 <StreetContainer>{item.street}</StreetContainer>
                 <FullAddress>{`${item.city}, ${item.state} - ${item.country}`}</FullAddress>
             </AddressContainer>
-            <PillsContainer>
+            <PillsContainer data-testid="brewery-pill-container">
                 {
                     pills.map(pill => pill)
                 }

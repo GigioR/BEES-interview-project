@@ -84,3 +84,12 @@ export const EditingButton = styled.button`
 export const InputAddMoreInfo = styled.input`
     width: 83px;
 `;
+
+export const NoDataAvailable = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+`
+export const NoDataAvailableText = styled.span`
+    font-weight: bold;
+`;
